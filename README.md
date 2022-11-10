@@ -1,4 +1,4 @@
-CIRCUITO DECODIFICADOR DE GRAY <a color="green" name="TOP"></a>
+Algoritmo de Booth - Multiplicador con signo <a color="green" name="TOP"></a>
 ===================
 
 <h4>Realizado por:</h4>
@@ -6,68 +6,64 @@ CIRCUITO DECODIFICADOR DE GRAY <a color="green" name="TOP"></a>
 
 # Descripción de funcionamiento y subsistemas #
 
-<p>Este repositorio es un informe que contiene el desarrollo de un circuito decodificador de Gray. El circuito consta de tres subsistemas:</p>
+<p>Este repositorio es un informe que contiene el desarrollo de un circuito con el algoritmo de Booth, encargado de realizar multiplicaciones con signo. El circuito consta de cuatro subsistemas:</p>
 
-1. Subsistema y decodificación de código Gray.
-2. Subsistema de despliegue de código ingresado traducido a formato binario en luces LED.
-3. Subsistema de desplieque de código ingresado y deodificado en display de 7 segmentos.
-
-<br/>
-
-<p>Los valores decimales, binarios y de Gray a trabajar fueron los siguientes:</p>
-
-Código decimal | Código binario de 4 bits | Código Gray de 4 bits
-| :---: | :---: | :---:
-0  | 0000 | 0000
-1  | 0001 | 0001
-2  | 0010 | 0011
-3  | 0011 | 0010
-4  | 0100 | 0110
-5  | 0101 | 0111
-6  | 0110 | 0101
-7  | 0111 | 0100
-8  | 1000| 1100
-9  | 1001 | 1101
-10  | 1010 | 1111
-11  | 1011 | 1110
-12  | 1100 | 1010
-13  | 1101 | 1011
-14  | 1110| 1001
-15  | 1111 | 1000
+1. Subsistema lectura.
+2. Subsistema de cálculo de multiplicación.
+3. Subsistema de conversión de binario a representación BCD.
+4. Subsistema de despliegue en display 7 segmentos.
 
 <br/>
 
-__1. Subsistema y decodificación de código Gray__
 
-<p>Este subsistema obtiene un código binario a partir de cuatro conmutadores. La entrada del código es capturada y sincronizada con el sistema principal. Este subsitema traduce la entrada capturada a un código de Gray antes de enviarlo al siguiente subsistema.</p>
+__1. Subsistema de Lectura__
+
+<p>Este subsistema recibe operandos, y acondiciona los valores para acoplarlos al funcionamiento del algoritmo de booth</p>
 
 En síntesis el subsistema realiza los siguientes pasos:
 
-1. Lectura del código binario de 4 bits.
-2. Conversión del código binario a código de Gray, la conversión se realiza mediante compuertas lógicas.
-3. Salida de 4 bits código de Gray para el siguiente subsistema.
+1. Adquiere los operandos A y B de 8 bits cada uno para realizar la operación de multiplicación.
+2. Los operandos A y B se interpretan con signo en complemento a 2.
+3. La entrada del código se captura y se sincroniza con el sistema principal por medio de un circuito antirebote con 4 etapas de Flip Flops en cascada por switch.
+4. El circuito espera ante el accionar de un push button que debe ser presionado por al menos 500ms. Al cumplirse este tiempo, el sistema dará inicio a la operación aritmética de multiplicación.
+5. El circuito no inicia otra operación hasta que el push button vuelva a su posición inicial enc aso de haberse cumplido con el punto anterior.
+6. Cada bit adquirido por el sistema a cumplir el requisito 2, debe desplegar en un LED próximo al switch para indicar cómo fue leído.
 
 <br>
 
-__2. Subsistema de despliegue de código ingresado traducido a formato binario en luces LED__
+__2. Subsistema de cálculo de multiplicación__
 
-<p>Este subsistema toma los datos en código binario y los despliega en cuatro luces LED, se refresca al menos cada 500ms.</p>
+<p>Este subsistema se encarga de realizar la multiplicación con signo.</p>
 
-1. Se asignan 4 salidas.
-2. Se representa la salida de cada bit con un LED.
-3. Se envían los datos a la FPGA.
-
+1. El sistema recibe los operandos A y B del subsistema de lectura.
+2. La operación de multiplicación se iniciará cuando el subsistema de lectura le indica a este subsistema que los operandos son válidos por medio de una bandera valid.
+3.  El cálculo de multiplicación con signo se realiza de manera iterativa por medio del Algoritmo de
+Booth.
+4.  Este bloque indicará al siguiente bloque consecutivo cuando el resultado de la multiplicación está
+estable para ser muestreado con una señal done.
 
 
 <br>
 
-__3. Subsistema de desplieque de código ingresado y decodificado en display de 7 segmentos__
+__3. Subsistema de conversión de binario a representación BCD__
 
-<p>Este subsistema toma los datos en código binario y los depliega en un display de siete segmentos, de forma decimal. Cuenta con una tasa de refresco adecuada.</p>
+<p>Este subsistema toma los datos en código binario y los convierte a representación decimal.</p>
 
-1. Se asignan 4 salidas.
-2. Se representa la salida de cada bit con un LED.
-3. Se envían los datos a la FPGA.
+1. Este sistema registrará el resultado del bloque anterior (16 bits con signo) y lo convertirá en un formato BCD.
+2. Se permite realizar la conversión de manera combinacional o secuencial.
+3.  Deberá generar al menos 5 dígitos en BCD y uno de signo para el siguiente bloque.
+4. Se indicará al siguiente bloque por medio de una bandera de done cuando está lista la conversión para
+registrar.
+
+__4. Subsistema de despliegue en display de 7 segmentos__
+
+<p>Este subsistema toma los datos en BCD y los representa en el display de 7 segmentos.</p>
+
+1. Este subsistema toma el resultado de la multiplicación en BCD y los despliega en los dispositivos 7
+segmentos disponibles en la placa, de forma decimal e incluyendo el signo.
+2. Deberá utilizar al menos 6 dígitos disponibles del 7 segmentos.
+3. El sistema deberá tener la tasa de refresco adecuada para una visualización cómoda por parte del
+usuario.
 
 # Diagrama de bloques de cada subsistema #
 
