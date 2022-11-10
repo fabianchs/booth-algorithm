@@ -70,7 +70,11 @@ usuario.
 
 <br/>
 
-![Diagrama de bloques de cada subsistema](/images/diagrama.png)
+__Diagrama de bloques del subsistema de booth:__
+
+<br/>
+
+![Diagrama de bloques de cada subsistema](/images/booth.png)
 # Diagrama de estado de las FSM #
 
 # Ejemplo y análisis de simulación funcional del sistema #
