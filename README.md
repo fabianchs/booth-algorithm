@@ -120,5 +120,5 @@ __Diagrama del sistema de conversión binario a BCD:__
 
 3. Se realizaron diversas correcciones al diagrama de bloques, este contenía algunos errores, lo cual arrastró al código algunas implementaciones que fue necesario revisar y corregir nuevamente en el diagrama.
 
-4. Hubo problemas con la conexión de los switches con el sistema antirrebotes.
+4. Hubo problemas con la conexión de los switches con el sistema antirrebotes, por lo cual se aprovechó la espera de 500ms en el botón para considerar esto como un sistema antirrebote.
 
