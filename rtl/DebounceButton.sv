@@ -1,0 +1,16 @@
+`timescale 1ns / 1ps
+
+module DeBounceButton(CLK,RESET,BOT,BOTOUT);
+
+input CLK,RESET,BOT;
+output BOTOUT;
+
+wire CUENTADONE;
+wire SET;
+wire CUENTAENA;
+
+FSMDebounce FSMDEBOUNCE(CLK,RESET,BOT,CUENTADONE,BOTOUT,SET,CUENTAENA);
+ContadorDebounce CONTADORDEBOUNCE(CLK,SET,CUENTAENA,CUENTADONE);
+
+
+endmodule
