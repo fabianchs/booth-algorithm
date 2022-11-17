@@ -55,6 +55,8 @@ __3. Subsistema de conversión de binario a representación BCD__
 4. Se indicará al siguiente bloque por medio de una bandera de done cuando está lista la conversión para
 registrar.
 
+<br>
+
 __4. Subsistema de despliegue en display de 7 segmentos__
 
 <p>Este subsistema toma los datos en BCD y los representa en el display de 7 segmentos.</p>
