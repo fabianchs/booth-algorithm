@@ -77,6 +77,10 @@ __Diagrama de bloques del subsistema de booth:__
 ![Diagrama de bloques de cada subsistema](/images/booth.png)
 # Diagrama de estado de las FSM #
 
+__Diagrama del switch del sistema antirrebote:__
+
+![Diagrama de bloques de cada subsistema](/images/tb_sw_debouncing.jpg)
+
 # Ejemplo y análisis de simulación funcional del sistema #
 
 # Análisis de consumo de recursos de la FPGA y potencia #
