@@ -91,8 +91,8 @@ __Diagrama del switch del sistema antirrebote:__
 
 <p>A continuación se presentan algunos inconvenientes hallados a la hora de realizar el proyecto:</p>
 
-1. Mediante recomendación del profesor, se consideró la posibilidad de realizar una memoria ROM, desde un archivo binario, y este sería previamente realizado con python, por lo cual todas las posibilidades de números positivos y negativos habrían estado en el archivo binario. Hubo problemas en la sincronización de estos archivos, por lo cual, se optó por realizar la lógica de este sistema directamente desde verilog.
+1. Mediante recomendación del profesor, se consideró la posibilidad de realizar una memoria ROM, desde un archivo binario, y este sería previamente realizado con python, por lo cual todas las posibilidades de números positivos y negativos habrían estado en el archivo binario. Hubo problemas en la sincronización de estos archivos, por lo cual, se optó por realizar la lógica de este sistema directamente desde verilog. Con un algoritmo de corrimientos se obtuvo cada una de las salidas correctas del BCD.
 
-2. Deberá utilizar al menos 6 dígitos disponibles del 7 segmentos.
-3. El sistema deberá tener la tasa de refresco adecuada para una visualización cómoda por parte del
-usuario.
+2. Relacionado al display de 7 segmentos hubo inconvenientes con la sincronización de los datos provenientes del BCD. Mediante investigación y experimentación se logró solucionar este problema, la razón de este inconveniente era un desconocimiento de la sincronización de los subsistemas.
+
+3. Se realizaron diversas correcciones al diagrama de bloques, este contenía algunos errores, lo cual arrastró al código algunas implementaciones que fue necesario revisar y corregir nuevamente en el diagrama.
