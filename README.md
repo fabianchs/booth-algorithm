@@ -83,6 +83,12 @@ __Diagrama del switch del sistema antirrebote:__
 
 ![Diagrama de bloques de cada subsistema](/images/tb_sw_debouncing.jpg)
 
+<br>
+
+__Diagrama del sistema de conversión binario a BCD:__
+
+![Diagrama de bloques de cada subsistema](/images/bcd_tb.jpg)
+
 # Ejemplo y análisis de simulación funcional del sistema #
 
 # Análisis de consumo de recursos de la FPGA y potencia #
@@ -98,3 +104,6 @@ __Diagrama del switch del sistema antirrebote:__
 2. Relacionado al display de 7 segmentos hubo inconvenientes con la sincronización de los datos provenientes del BCD. Mediante investigación y experimentación se logró solucionar este problema, la razón de este inconveniente era un desconocimiento de la sincronización de los subsistemas.
 
 3. Se realizaron diversas correcciones al diagrama de bloques, este contenía algunos errores, lo cual arrastró al código algunas implementaciones que fue necesario revisar y corregir nuevamente en el diagrama.
+
+4. Hubo problemas con la conexión de los switches con el sistema antirrebotes.
+
