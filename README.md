@@ -85,7 +85,7 @@ __Diagrama de bloques del subsistema de multiplicación:__
 
 <br/>
 
-![Diagrama de bloques del subsistema de multiplicación](/images/booth.png)
+![Diagrama de bloques del subsistema de multiplicación](/images/sub_calc.png)
 
 __Diagrama de bloques del subsistema de booth:__
 
