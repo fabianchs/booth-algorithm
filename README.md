@@ -69,8 +69,23 @@ usuario.
 
 # Diagrama de bloques de cada subsistema #
 
+__Diagrama de bloques del sistema completo:__
 
 <br/>
+
+![Diagrama de bloques de todo el sistema](/images/top_sys.png)
+
+__Diagrama de bloques del subsistema de lectura:__
+
+<br/>
+
+![Diagrama de bloques del subsistema de lectura](/images/sub_lec.png)
+
+__Diagrama de bloques del subsistema de multiplicación:__
+
+<br/>
+
+![Diagrama de bloques del subsistema de multiplicación](/images/booth.png)
 
 __Diagrama de bloques del subsistema de booth:__
 
@@ -81,7 +96,7 @@ __Diagrama de bloques del subsistema de booth:__
 
 __Diagrama del switch del sistema antirrebote:__
 
-![Diagrama de bloques de cada subsistema](/images/tb_sw_debouncing.jpg)
+![Diagrama de bloques del sistema antirrebote](/images/tb_sw_debouncing.jpg)
 
 <br>
 
