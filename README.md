@@ -88,3 +88,11 @@ __Diagrama del switch del sistema antirrebote:__
 # Velocidades máximas de reloj posibles en el diseño #
 
 # Principales problemas hallados durante la elaboración y soluciones #
+
+<p>A continuación se presentan algunos inconvenientes hallados a la hora de realizar el proyecto:</p>
+
+1. Mediante recomendación del profesor, se consideró la posibilidad de realizar una memoria ROM, desde un archivo binario, y este sería previamente realizado con python, por lo cual todas las posibilidades de números positivos y negativos habrían estado en el archivo binario. Hubo problemas en la sincronización de estos archivos, por lo cual, se optó por realizar la lógica de este sistema directamente desde verilog.
+
+2. Deberá utilizar al menos 6 dígitos disponibles del 7 segmentos.
+3. El sistema deberá tener la tasa de refresco adecuada para una visualización cómoda por parte del
+usuario.
